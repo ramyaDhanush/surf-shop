@@ -14,9 +14,7 @@ router.get("/register", (req, res, next) => {
   res.send("Get /register");
 });
 
-router.post("/register", (req, res, next) => {
-  res.send("POST /register");
-});
+router.post("/register", postRegister);
 
 router.get("/login", (req, res, next) => {
   res.send("GET /login");

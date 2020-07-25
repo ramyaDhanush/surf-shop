@@ -6,6 +6,7 @@ const logger = require("morgan");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 // const passportLocalMongoose = require("passport-local-mongoose");
+const session = require("express-session");
 
 // User
 const User = require("./models/user");
@@ -34,7 +35,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(
   session({
     secret: "secret ",
-    reserve: false,
+    resave: false,
     saveUninitialized: true,
     // cookie: { secure: true },
   })
