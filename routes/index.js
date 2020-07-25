@@ -1,5 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const { postRegister } = require("../controllers/index");
+
+// const indexObj = require("../controllers/index"); //Controller
+// const postRegister = indexObj.postRegister;
 
 /* GET home page. */
 router.get("/", (req, res, next) => {
