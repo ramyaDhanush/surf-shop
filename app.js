@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 // const passportLocalMongoose = require("passport-local-mongoose");
 const session = require("express-session");
+const mongoose = require("mongoose");
 
 // User
 const User = require("./models/user");
@@ -18,6 +19,11 @@ const postsRouter = require("./routes/posts");
 const reviewsRouter = require("./routes/reviews");
 
 const app = express();
+
+// Connect to database
+mongoose.connect("mongodb://localhost:27017/surf-shop", {
+  useNewUrlParser: true,
+});
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
